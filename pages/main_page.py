@@ -15,7 +15,7 @@ class MainPage(BasePage):
     def click_profile_area_btn(self):
         self.find_element_located_click(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
 
-    @allure.step('Переход к кнопке "Личный Кабинет" и клик на нее')
+    @allure.step('Переход к кнопке "Войти в аккаунт" и клик на нее')
     def move_to_personal_account_btn_and_click(self):
         self.find_element_located_click(MainPageLocators.ACCOUNT_BUTTON)
 
