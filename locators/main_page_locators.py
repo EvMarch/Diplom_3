@@ -4,15 +4,12 @@ class MainPageLocators:
     # Логотип Stellar Burgers
     LOGO = ".//a"
     # Кнопка «Конструктор»
-    CONSTRUCTOR_BUTTON = "//p[text() = 'Конструктор']"
+    CONSTRUCTOR_BUTTON = (By.XPATH, ".//p[contains(text(), 'Конструктор')]")
     # Кнопка «Личный кабинет»
-    PERSONAL_ACCOUNT_BUTTON = "//p[text() = 'Личный Кабинет']"
+    PERSONAL_ACCOUNT_BUTTON = (By.XPATH, ".//p[contains(text(), 'Личный Кабинет')]")
     # Кнопка «Лента заказов»
     ORDER_FEED_BUTTON = (By.XPATH, ".//p[contains(text(), 'Лента Заказов')]")
 
-    #constructor_btn = (By.XPATH, ".//p[contains(text(), 'Конструктор')]")
-    #order_feed_btn = (By.XPATH, ".//p[contains(text(), 'Лента Заказов')]")
-    #personal_account_btn = (By.XPATH, ".//p[contains(text(), 'Личный Кабинет')]")
 
     # Форма ленты заказа
     ORDER_FEED_FORM = (By.XPATH, ".//div[@class = 'OrderFeed_orderFeed__2RO_j']")

@@ -52,12 +52,11 @@ def create_new_user():
 @pytest.fixture
 def login(browser, create_new_user):
         create_user_data = create_new_user[0]
-        header_page = MainPage(browser)
-        login_page = LoginPage(browser)
-        header_page.click_profile_area_btn()
-        login_page.login(create_user_data["email"], create_user_data["password"])
         main_page = MainPage(browser)
-        main_page.wait_load_main_page()
+        login_page = LoginPage(browser)
+        main_page.click_profile_area_btn()
+        login_page.login(create_user_data["email"], create_user_data["password"])
+        #main_page.wait_load_main_page()
 
 
 @pytest.fixture

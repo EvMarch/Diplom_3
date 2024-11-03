@@ -8,6 +8,9 @@ class Urls:
     URL_LOGIN = "https://stellarburgers.nomoreparties.site/login"
     URL_FORGOT_PASSWORD = "https://stellarburgers.nomoreparties.site/forgot-password"
     URL_RECOVERY_PASSWORD = "https://stellarburgers.nomoreparties.site/reset-password"
+    URL_PROFILE = "https://stellarburgers.nomoreparties.site/account/profile"
+    URL_HISTORY = "https://stellarburgers.nomoreparties.site/account/order-history"
+
 
 class Endpoints:
 

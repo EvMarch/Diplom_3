@@ -19,6 +19,10 @@ class MainPage(BasePage):
     def move_to_personal_account_btn_and_click(self):
         self.find_element_located_click(MainPageLocators.ACCOUNT_BUTTON)
 
+    @allure.step('Проверка отображения кнопки "Личный Кабинет"')
+    def check_profile_area_btn(self):
+        return self.find_element_located(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
+
     @allure.step('Проверка отображения формы конструктор')
     def check_constructor_form(self):
         return self.find_element_located(MainPageLocators.CONSTRUCTOR_FORM)
