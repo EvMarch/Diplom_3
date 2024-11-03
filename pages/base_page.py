@@ -1,5 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 
 
 class BasePage:
@@ -17,6 +18,10 @@ class BasePage:
         return WebDriverWait(self.browser, time).until(EC.presence_of_element_located(locator),
                                                       message=f"Can't find element by locator {locator}")
 
+    def find_element_not_located(self, locator, time=10):
+        WebDriverWait(self.browser, time).until(EC.invisibility_of_element_located(locator))
+        return self.browser.find_element(*locator)
+
     def find_element_located_click(self, locator):
         self.find_element_located(locator).click()
 
@@ -33,3 +38,21 @@ class BasePage:
 
     def scroll_page(self):
         return self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+
+    def drag_and_drop(self, element_one, element_two):
+        element = self.browser.find_element(*element_one)
+        target = self.browser.find_element(*element_two)
+        action_chains = ActionChains(self.browser)
+        action_chains.drag_and_drop(element, target).perform()
+
+    def get_text_locator(self, locator):
+        WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(locator))
+        return self.browser.find_element(*locator).text
+
+    def wait_for_load_element(self, locator):
+        WebDriverWait(self.browser, 20).until(EC.presence_of_element_located(locator))
+
+    def move_to_element_and_click(self, locator):
+        element = self.browser.find_element(*locator)
+        actions = ActionChains(self.browser)
+        actions.move_to_element(element).click().perform()
