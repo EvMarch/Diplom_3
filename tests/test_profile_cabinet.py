@@ -25,7 +25,6 @@ class TestProfileAreaPage:
         login.click_login_btn()
         main.check_profile_area_btn()
         main.click_profile_area_btn()
-
         assert profile_area.check_profile_area_form() and profile_area.current_url() == (Urls.URL_PROFILE)
 
     @allure.title('Проверка перехода в "История Заказов"')
