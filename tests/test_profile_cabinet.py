@@ -1,6 +1,6 @@
 import allure
 
-from urls_credits import Urls,Credits
+from helpers import Urls,Credits
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from pages.profile_page import ProfileAreaPage
@@ -48,7 +48,7 @@ class TestProfileAreaPage:
         profile_area.click_history_orders_btn()
         assert profile_area.check_profile_area_form() and profile_area.current_url() == (Urls.URL_HISTORY)
 
-    @allure.title('Проверка выхода из аккаунта"')
+    @allure.title('Проверка выхода из аккаунта')
     @allure.description('''
                         1. Открываем стенд
                         2. Логин

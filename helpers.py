@@ -13,13 +13,13 @@ class Urls:
     URL_FEED = 'https://stellarburgers.nomoreparties.site/feed'
 
 
-class Endpoints:
+#class Endpoints:
 
-    CREATE_USER = 'api/auth/register'
-    LOGIN = 'api/auth/login'
-    DELETE_USER = 'api/auth/user'
-    CREATE_ORDER = 'api/orders'
-    GET_ORDERS = 'api/orders'
+ #   CREATE_USER = 'api/auth/register'
+  #  LOGIN = 'api/auth/login'
+  #  DELETE_USER = 'api/auth/user'
+  #  CREATE_ORDER = 'api/orders'
+  #  GET_ORDERS = 'api/orders'
 
 
 class Credits:
@@ -41,8 +41,8 @@ class Person:
         }
         return data
 
-class Ingredients:
+#class Ingredients:
 
-    correct_ingredients_data = {
-        "ingredients": ["61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa6f"]
-        }
+   # correct_ingredients_data = {
+   #     "ingredients": ["61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa6f"]
+   #     }

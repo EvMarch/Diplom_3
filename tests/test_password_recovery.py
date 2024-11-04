@@ -1,6 +1,6 @@
 import allure
 
-from urls_credits import Urls, Credits, Person
+from helpers import Urls, Credits, Person
 from pages.main_page import MainPage
 from pages.recovery_password_page import RecoveryPage
 from pages.login_page import LoginPage
@@ -8,9 +8,9 @@ from pages.login_page import LoginPage
 
 class TestRecoveryPage:
 
-    @allure.title('Проверка перехода на страницу восстановления пароля по кнопке «Восстановить пароль»')
+    @allure.title('Проверка перехода на страницу восстановления пароля по кнопке "Восстановить пароль"')
     @allure.description('''
-                        1. Открываем стенд;
+                        1. Открываем стенд
                         2. Переход на страницу лк
                         3. Клик по кнопке "Восстановить пароль"
                         ''')
@@ -24,7 +24,7 @@ class TestRecoveryPage:
 
     @allure.title('Проверка ввода почты и клик по кнопке "Восстановить"')
     @allure.description('''
-                        1. Открываем стенд;
+                        1. Открываем стенд
                         2. Переход на страницу лк
                         3. Клик по кнопке "Восстановить пароль"
                         4. Заполнение поля "Email"
@@ -40,12 +40,12 @@ class TestRecoveryPage:
         recovery_page.click_recovery_btn()
         assert recovery_page.check_save_btn() and recovery_page.current_url() == (Urls.URL_RECOVERY_PASSWORD)
 
-    @allure.title('Проверка клика по кнопке показать/скрыть пароль делает поле активным — подсвечивает его"')
+    @allure.title('Проверка клика по кнопке показать/скрыть пароль делает поле активным — подсвечивает его')
     @allure.description('''
                         1. Открываем стенд
                         2. Переход на страницу лк
                         3. Клик по кнопке "Восстановить пароль"
-                        4. Заполнение поля "Email
+                        4. Заполнение поля "Email"
                         5. Клик на кнопку "Восстановить"
                         6. Заполнить поле "Пароль"
                         7. Клик на кнопку "Показать"

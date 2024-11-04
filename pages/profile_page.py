@@ -37,3 +37,13 @@ class ProfileAreaPage(BasePage):
     @allure.step('Получение номера заказа в истории')
     def get_orders_number(self):
         return self.get_text_locator(PersonalPageLocators.NUMBER_ORDER)
+
+    @allure.step("Проверка нахождение идентификатора заказа в истории")
+    def found_order_at_history(self, order_id):
+        elements = self.find_until_all_elements_located(PersonalPageLocators.ORDERS_AT_HISTORY)
+
+        for element in elements:
+            if order_id == element.text:
+                return True
+        return True
+

@@ -15,6 +15,7 @@ class MainPage(BasePage):
     def click_profile_area_btn(self):
         self.find_element_located_click(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
 
+
     @allure.step('Переход к кнопке "Войти в аккаунт" и клик на нее')
     def move_to_personal_account_btn_and_click(self):
         self.find_element_located_click(MainPageLocators.ACCOUNT_BUTTON)
@@ -43,12 +44,13 @@ class MainPage(BasePage):
     def check_close_fluorescent_bun_form(self):
         return self.find_element_not_located(MainPageLocators.INGREDIENTS_POPUP_FORM)
 
-    @allure.step('Закрытие формы информации об ингридиенте')
+    @allure.step('Закрытие формы информации об ингредиенте')
     def close_popup_form(self):
         self.find_element_located_click(MainPageLocators.CLOSE_POPUP_FORM)
 
     @allure.step('Добавить булку в корзину')
     def add_bun(self):
+        self.find_element_located(MainPageLocators.FLU_BUN_BUTTON)
         self.drag_and_drop(MainPageLocators.FLU_BUN_BUTTON, MainPageLocators.ORDER_BASKET)
 
     @allure.step('Клик по кнопке "Оформить заказ"')
@@ -68,10 +70,14 @@ class MainPage(BasePage):
     def check_order_form(self):
         return self.find_element_located(MainPageLocators.ORDER_FORM)
 
-    @allure.step('Получение номера оформленного заказа')
-    def get_order_number(self):
-        return self.get_text_locator(MainPageLocators.ORDER_NUMBER)
+    @allure.step('Получение id заказа')
+    def get_order_id(self):
+        self.find_element_visibility(MainPageLocators.ID_ORDER_TEXT)
+        order_id = self.get_text(MainPageLocators.ID_ORDER)
+        while order_id == '9999':
+            order_id = self.get_text(MainPageLocators.ID_ORDER)
+        return f"{order_id}"
 
-    @allure.step('Ожидание загрузки кнопки Оформить заказ')
-    def wait_load_main_page(self):
-        self.wait_for_load_element(MainPageLocators.ORDER_BUTTON)
+    @allure.step('Клик по кнопке "Личный кабинет"')
+    def click_cancel_btn(self):
+        self.find_element_located_click(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)

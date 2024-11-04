@@ -1,13 +1,13 @@
 import allure
 
-from urls_credits import Urls, Credits
+from helpers import Urls, Credits
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 
 
 class TestMainPage:
 
-    @allure.title('Проверка перехода по клику на «Конструктор»')
+    @allure.title('Проверка перехода по клику на "Конструктор"')
     @allure.description('''
                         1. Открываем стенд
                         2. Клик по кнопке "Войти в аккаунт"
@@ -20,7 +20,7 @@ class TestMainPage:
         main_page.click_constructor_btn()
         assert main_page.check_constructor_form() and main_page.current_url() == Urls.URL_MAIN
 
-    @allure.title('Проверка перехода по клику на «Лента заказов»')
+    @allure.title('Проверка перехода по клику на "Лента заказов"')
     @allure.description('''
                         1. Открываем стенд
                         2. Клик по кнопке "Лента заказов";

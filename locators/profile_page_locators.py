@@ -17,3 +17,10 @@ class PersonalPageLocators:
     SAVE_BUTTON = (By.XPATH, ".//button[text() = 'Сохранить']")
     # Кнопка выход
     EXIT_BUTTON = (By.XPATH, ".//button[text() = 'Выход']")
+    #Кнопка Личный кабинет
+    BUTTON_PROFILE_PAGE = By.XPATH, '//*[@href = "/account"]'
+    #Заказы в "История заказов"
+    ORDERS_AT_HISTORY = (By.XPATH, "//div[contains(@class, 'OrderHistory_textBox__3lgbs')]/p[contains(@class, "
+                                   "'text_type_digits-default')]")
+
+
